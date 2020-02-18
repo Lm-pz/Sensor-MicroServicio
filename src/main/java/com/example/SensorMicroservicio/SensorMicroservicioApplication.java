@@ -1,4 +1,4 @@
-package com.example.CamaraMicroservicio;
+package com.example.SensorMicroservicio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
