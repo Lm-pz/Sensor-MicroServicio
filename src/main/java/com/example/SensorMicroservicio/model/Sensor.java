@@ -22,6 +22,9 @@ public class Sensor implements Serializable {
 	@NotNull 
 	private Double temperatura_minima;
 	
+	@NotNull 
+	private Double temperatura_actual;
+	
 	@NotNull
 	private Double area_medida;
 
@@ -78,6 +81,14 @@ public class Sensor implements Serializable {
 
 	public void setCamara_id(Long camara_id) {
 		this.camara_id = camara_id;
+	}
+
+	public Double getTemperatura_actual() {
+		return temperatura_actual;
+	}
+
+	public void setTemperatura_actual(Double temperatura_actual) {
+		this.temperatura_actual = temperatura_actual;
 	}
 
 }

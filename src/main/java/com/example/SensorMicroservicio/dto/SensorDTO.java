@@ -1,7 +1,5 @@
 package com.example.SensorMicroservicio.dto;
 
-
-
 public class SensorDTO {
 
 	private String numero_serie;
@@ -12,6 +10,8 @@ public class SensorDTO {
 	
 	private double temperatura_minima;
 	
+	private double temperatura_actual;
+	
 	private double area_medida;
 
 	private long camara_id;
@@ -21,11 +21,12 @@ public class SensorDTO {
 	}
 
 	public SensorDTO(String numero_serie, String fabricante, double temperatura_maxima, double temperatura_minima,
-			double area_medida, long camara_id) {
+			double temperatura_actual,	double area_medida, long camara_id) {
 		this.numero_serie = numero_serie;
 		this.fabricante = fabricante;
 		this.temperatura_maxima = temperatura_maxima;
 		this.temperatura_minima = temperatura_minima;
+		this.temperatura_actual = temperatura_actual;
 		this.area_medida = area_medida;
 		this.camara_id = camara_id;
 	}
@@ -77,6 +78,15 @@ public class SensorDTO {
 	public void setCamara_id(long camara_id) {
 		this.camara_id = camara_id;
 	}
+
+	public double getTemperatura_actual() {
+		return temperatura_actual;
+	}
+
+	public void setTemperatura_actual(double temperatura_actual) {
+		this.temperatura_actual = temperatura_actual;
+	}
+	
 	
 	
 	
