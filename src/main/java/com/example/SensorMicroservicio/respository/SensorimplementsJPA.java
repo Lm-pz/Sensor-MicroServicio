@@ -10,7 +10,7 @@ import com.example.SensorMicroservicio.mapper.Mapper;
 import com.example.SensorMicroservicio.model.Sensor;
 
 @Component
-public class SensorimplementsJPA implements IServiciosRepository{
+public class SensorimplementsJPA implements ISensorRepository{
 	@Autowired
 	private Mapper m;
 	@Autowired
@@ -56,5 +56,20 @@ public class SensorimplementsJPA implements IServiciosRepository{
 	public SensorDTO findSensor(String id) {
 		Sensor s= cs.findById(id).get();
 		return m.SensorEntitytoDTO(s);
+	}
+	
+	public int NSensoresenCamara(long id) {
+		return cs.getNSensoresenCamara(id);
+	}
+
+	@Override
+	public List<SensorDTO> getSensoresCamara(long id) {
+		List<SensorDTO> sensoresDto = new ArrayList<> ();
+		List<Sensor> sens =  cs.getSensoresCamara(id);
+		for(Sensor s:sens) {
+			sensoresDto.add(
+				m.SensorEntitytoDTO(s));
+			}
+			return sensoresDto;
 	}
 }

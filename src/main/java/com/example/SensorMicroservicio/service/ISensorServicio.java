@@ -14,5 +14,9 @@ public interface ISensorServicio {
 	int updateSensor(SensorDTO sensor);
 
 	SensorDTO findSensor(String id);
+	
+	int NSensoresenCamara(long id);
+	
+	ArrayList<SensorDTO> obtenerSensoresCamara(long id);
 	 
 }

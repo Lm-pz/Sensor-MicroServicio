@@ -3,20 +3,18 @@ package com.example.SensorMicroservicio.service;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.SensorMicroservicio.dto.SensorDTO;
-import com.example.SensorMicroservicio.respository.IServiciosRepository;
+import com.example.SensorMicroservicio.respository.ISensorRepository;
 
 @Service
 public class SensorServicio implements 	ISensorServicio {
 	@Autowired
-	IServiciosRepository repo;
+	ISensorRepository repo;
 	
 	public ArrayList<SensorDTO> obtenerTodos() {
 		return (ArrayList<SensorDTO>)repo.findAllSensores();
 	}
 	
-
 	@Override
 	public SensorDTO altaSensor(SensorDTO sensor) {
 		SensorDTO s=null;
@@ -25,7 +23,6 @@ public class SensorServicio implements 	ISensorServicio {
 		return s;
 	}
 
-
 	@Override
 	public int deleteSensor(String id) {
 		int exito=0;
@@ -33,7 +30,6 @@ public class SensorServicio implements 	ISensorServicio {
 			exito=repo.deleteSensor(id);
 		return exito;
 	}
-
 
 	@Override
 	public int updateSensor(SensorDTO sensor) {
@@ -49,5 +45,15 @@ public class SensorServicio implements 	ISensorServicio {
 		if(repo.existeEntidad(id))
 		sen=repo.findSensor(id);
 		return sen;
+	}
+	
+	@Override
+	public int NSensoresenCamara(long id) {
+		return repo.NSensoresenCamara(id);
+	}
+	
+	@Override
+	public ArrayList<SensorDTO> obtenerSensoresCamara(long id){
+		return (ArrayList<SensorDTO>)repo.getSensoresCamara(id);
 	}
 }

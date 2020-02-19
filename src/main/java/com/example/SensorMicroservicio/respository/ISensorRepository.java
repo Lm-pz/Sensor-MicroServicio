@@ -3,7 +3,7 @@ package com.example.SensorMicroservicio.respository;
 import java.util.List;
 import com.example.SensorMicroservicio.dto.SensorDTO;
 
-public interface IServiciosRepository {
+public interface ISensorRepository {
 
 	List<SensorDTO> findAllSensores();
 
@@ -17,4 +17,7 @@ public interface IServiciosRepository {
 	
 	boolean existeEntidad(String id);
 
+	int NSensoresenCamara(long id);
+	
+	List<SensorDTO> getSensoresCamara(long id);
 }

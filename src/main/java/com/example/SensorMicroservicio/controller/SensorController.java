@@ -34,7 +34,6 @@ public class SensorController {
 	public int eliminarSensor ( @PathVariable String id  ) {
 		
 		return sensorServicio.deleteSensor(id);
-		
 	}
 	
 	@PutMapping("/modificarSensor")
@@ -48,4 +47,14 @@ public class SensorController {
 	public SensorDTO findSensor ( @PathVariable String id ){
 		return sensorServicio.findSensor(id);
 	}
+	
+	@GetMapping("/findNSensor/{id}")
+	public int findNSensor ( @PathVariable long id ){
+		return sensorServicio.NSensoresenCamara(id);
+	}
+	
+	@GetMapping("/findCSensor/{id}")
+	public ArrayList<SensorDTO> findCSensor ( @PathVariable long id ){
+		return sensorServicio.obtenerSensoresCamara(id);	
+		}
 }
