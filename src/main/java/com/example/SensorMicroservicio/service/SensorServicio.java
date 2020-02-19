@@ -1,6 +1,8 @@
 package com.example.SensorMicroservicio.service;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.SensorMicroservicio.dto.SensorDTO;
@@ -54,6 +56,9 @@ public class SensorServicio implements 	ISensorServicio {
 	
 	@Override
 	public ArrayList<SensorDTO> obtenerSensoresCamara(long id){
-		return (ArrayList<SensorDTO>)repo.getSensoresCamara(id);
+		List<SensorDTO> sensoresDto = new ArrayList<> ();
+		if (repo.NSensoresenCamara(id)>0)
+			sensoresDto = repo.getSensoresCamara(id);
+		return (ArrayList<SensorDTO>) sensoresDto;
 	}
 }
