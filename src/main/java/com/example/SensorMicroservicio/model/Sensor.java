@@ -28,7 +28,7 @@ public class Sensor implements Serializable {
 	@NotNull
 	private Double area_medida;
 
-	@NotNull 
+	
 	private Long camara_id;
 	
 	public Sensor() {
